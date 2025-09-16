@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 HederaPoly | Solo Blockchain Game</title>
+    <link rel="stylesheet" href="./css/style.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="board">
+            <div id="diceResult"></div>
+        </div>
+
+        <div id="uiPanel">
+            <button id="helpBtn" title="How to Play">❓</button>
+            <h1 style="color: var(--hedera-teal); margin-top: 0;">HederaPoly</h1>
+            <p style="color: var(--hedera-pink);">Solo blockchain game on Hedera</p>
+
+            <div id="walletPanel">
+                <button id="connectWallet">CONNECT WALLET</button>
+                <div id="walletInfo" style="margin-top: 10px; display: none;">
+                    <div>Connected: <span id="walletAddress" style="color: var(--hedera-teal);"></span></div>
+                    <div>Balance: <span id="hbarBalance" style="color: var(--hedera-pink);"></span> HBAR</div>
+                    <div>HPOLY Tokens: <span id="tokenBalance" style="color: var(--hedera-teal);"></span></div>
+                    <div>Points: <span id="points" style="color: var(--hedera-purple);"></span></div>
+                </div>
+                <div class="auto-refresh-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="autoRefreshToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Auto-Refresh</span>
+                </div>
+            </div>
+
+            <div id="playerInfo">
+                <h3>PLAYER: <span id="playerStatus" style="color: var(--hedera-teal);"></span></h3>
+                <div>Position: <span id="playerPosition">0</span></div>
+                <div>Balance: <span id="playerBalance">0</span> HPOLY</div>
+            </div>
+
+            <div id="gameActions">
+                <button id="mintTokensBtn" class="game-btn">💰 MINT HPOLY</button>
+                <button id="startGameBtn" class="game-btn">🚀 START GAME</button>
+                <button id="rollDiceBtn" class="game-btn" disabled>🎲 ROLL DICE</button>
+                <button id="claimPointBtn" class="game-btn disabled" disabled>🔥 CLAIM POINT</button>
+                <button id="endGameBtn" class="game-btn" disabled>🏁 END GAME</button>
+            </div>
+
+            <div id="gameInfo">
+                <div>Next Required HPOLY: <span id="nextRequiredHPOLY">0</span></div>
+                <div>Total Supply: <span id="totalSupply">0</span> HPOLY</div>
+                <div>Winner Count: <span id="winnerCount">0</span></div>
+            </div>
+
+            <div id="tileDetails" style="display: none;">
+                <h3 id="tileName"></h3>
+                <div>Type: <span id="tileType"></span></div>
+                <div>Value: <span id="tileValue"></span> HPOLY</div>
+            </div>
+
+            <div id="gameLog" style="margin-top: 20px; max-height: 200px; overflow-y: auto;">
+                <h3>GAME LOG</h3>
+                <div id="logEntries"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Play HederaPoly</h2>
+            <p>Welcome to HederaPoly, a solo blockchain game on the Hedera network! Follow these steps to play and earn points.</p>
+            <ol>
+                <li><strong>Connect Your Wallet</strong>: Click "CONNECT WALLET" to link your MetaMask wallet to the Hedera Testnet. Ensure you have HBAR for gas fees.</li>
+                <li><strong>Mint HPOLY Tokens</strong>: Click "💰 MINT HPOLY" to receive 500 HPOLY tokens to start playing.</li>
+                <li><strong>Start the Game</strong>: Click "🚀 START GAME" to begin your journey on the board with an initial balance of 1500 HPOLY.</li>
+                <li><strong>Roll the Dice</strong>: Click "🎲 ROLL DICE" to move around the 12-tile board. Landing on PROFIT tiles earns HPOLY, while LOSS tiles deduct HPOLY.</li>
+                <li><strong>Claim Points</strong>: Collect enough HPOLY tokens (starting at 200 HPOLY) and click "🔥 CLAIM POINT" to burn tokens and earn 1 point. The required HPOLY increases after each claim.</li>
+                <li><strong>End Game</strong>: Click "🏁 END GAME" to stop playing and reset your game state.</li>
+                <li><strong>Check Progress</strong>: Monitor your HBAR balance, HPOLY tokens, points, and game log in the UI panel. Click tiles to see their details.</li>
+            </ol>
+            <p>Explore the HederaPoly contract at <a href="https://hashscan.io/testnet/contract/0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E" target="_blank">HashScan</a> for more details!</p>
+        </div>
+    </div>
+<script src="./js/script.js"></script>
+</body>
+</html>
