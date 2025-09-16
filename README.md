@@ -8,6 +8,7 @@ HederaPoly is a blockchain-based game built on Solidity, inspired by Monopoly. P
 
 ## DEPLOYMENT ID
 CONTRACT ID: 0.0.6836339
+
 CONTRACT ADDRESS: 0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E
 
 <img width="1920" height="969" alt="Screenshot from 2025-09-16 11-44-28" src="https://github.com/user-attachments/assets/3f1203d8-bb53-4a96-8d20-a691b1cefce4" />
