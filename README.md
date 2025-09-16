@@ -14,6 +14,13 @@ CONTRACT ADDRESS: 0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E
 <img width="1920" height="969" alt="Screenshot from 2025-09-16 11-44-28" src="https://github.com/user-attachments/assets/3f1203d8-bb53-4a96-8d20-a691b1cefce4" />
 
 
+## HOW TO PLAY THE GAME
+- Must have Hedera testnet faucet, you can get it @ [faucet](https://portal.hedera.com/faucet)
+- Must have either an OKX/Metamask wallet, you can get OKX wallet @[OKX](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge) or Metamask wallet @[Metamask](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
+- create a new wallet and backup recovery phrase
+- then you go to chainlink to add the [Hedera netwok](https://chainlist.org/?search=hedera&testnets=true)
+- Your testnet balance will reflect. Have fun playing :)
+
 ## Features
 
 - **ERC1155 Tokens**: HPOLY tokens and unique NFTs for rewards.
