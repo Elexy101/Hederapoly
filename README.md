@@ -44,4 +44,4 @@ CONTRACT ADDRESS: 0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E
 - PRNG contract at `0x000...0169`
 
 ## VIDEO PREVIEW
-Youtube: https://youtu.be/tuR7wzhrbqI
+Video: https://drive.google.com/file/d/1CrXa7PgqNqGkRBvn2VT4G5UN_sx3kBMz/view?usp=sharing
