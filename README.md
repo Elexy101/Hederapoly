@@ -1,47 +1,151 @@
-# HederaPoly
 
-HederaPoly is a blockchain-based game built on Solidity, inspired by Monopoly. Players mint 100 HPOLY tokens (ERC1155) and start with a 100-token in-game balance. They navigate a 12-tile board by rolling a virtual die, landing on profit (+80 to +160 tokens) or loss (-50 to -120 tokens) tiles. Players burn tokens (1000 initially) to mint unique NFTs, with a cap of 6000 NFTs and 12M tokens. The game ends if the balance hits zero or caps are reached. It features strategic resource management, a pseudorandom number generator, and owner controls for token caps.
+# 🏦 HederaPoly
 
-## GAME PREVIEW
-<img width="1920" height="969" alt="Screenshot from 2025-09-16 11-45-15" src="https://github.com/user-attachments/assets/1c2b7d87-9c6a-4232-9248-ce01ad93ed2f" />
+> 🎯 **HederaPoly** is a decentralized, tokenized twist on *Monopoly* — blending gaming, NFTs, and DeFi strategy on the **Hedera network**. It demonstrates real-world use of smart contracts, verifiable randomness, and token economy — all inside a fun, interactive experience.
 
 
-## DEPLOYMENT ID
-CONTRACT ID: 0.0.6836339
+## 🚨 Problem
 
-CONTRACT ADDRESS: 0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E
+Blockchain gaming today often faces three major problems:
 
-<img width="1920" height="969" alt="Screenshot from 2025-09-16 11-44-28" src="https://github.com/user-attachments/assets/3f1203d8-bb53-4a96-8d20-a691b1cefce4" />
+* ❌ Lack of **fair randomness**, leading to distrust.
+* 💸 Poor **token economy design**, causing inflation or imbalance.
+* 🕹️ Limited **true ownership** of in-game assets.
 
 
-## HOW TO PLAY THE GAME
-- Must have Hedera testnet faucet, you can get it @ [faucet](https://portal.hedera.com/faucet)
-- Must have either an OKX/Metamask wallet, you can get OKX wallet @[OKX](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge) or Metamask wallet @[Metamask](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
-- create a new wallet and backup recovery phrase
-- then you go to chainlink to add the [Hedera netwok](https://chainlist.org/?search=hedera&testnets=true)
-- Your testnet balance will reflect. Have fun playing :)
+## 💡 Solution
 
-## Features
+HederaPoly solves these challenges through:
 
-- **ERC1155 Tokens**: HPOLY tokens and unique NFTs for rewards.
-- **Gameplay**: Move across a 12-tile board with profit, loss, and neutral tiles.
-- **NFT Minting**: Burn 1000+ HPOLY tokens to mint NFTs.
-- **Caps**: 12M token supply and 6000 NFT limits.
-- **Randomization**: Uses a PRNG contract for dice rolls, with a fallback mechanism.
-- **Owner Controls**: Adjust token caps and manage game state.
+* ✅ **Verifiable, pseudorandom gameplay** for dice rolls and outcomes.
+* 🔥 **Deflationary tokenomics**, where players burn tokens to mint NFTs.
+* 🪙 **True digital ownership** of rewards and assets through ERC-1155 tokens.
+* ⚡ **Fast, low-cost, and eco-friendly transactions** powered by **Hedera Hashgraph**.
 
-## Getting Started
 
-1. Deploy the contract on a compatible blockchain.
-2. Mint initial 100 HPOLY tokens using `mintTokens()`.
+## 🕹️ Gameplay Overview
+
+Players mint **100 HPOLY tokens (ERC-1155)** and begin with a 100-token balance.
+They navigate a **12-tile game board**, rolling a virtual die to land on tiles that yield profit or loss:
+
+| Tile Type | Token Change      | Example Range |
+| --------- | ----------------- | ------------- |
+| Profit    | +80 to +160 HPOLY | 🟩 Gain       |
+| Loss      | −50 to −120 HPOLY | 🟥 Lose       |
+| Neutral   | 0                 | ⚪ Hold steady |
+
+Players can burn tokens (1000+) to mint **unique NFTs**, up to **6000 NFTs total** and **12M total tokens**.
+
+The game ends if a player’s balance hits zero or supply caps are reached.
+Strategy and risk management determine survival and success.
+
+
+## 🧩 Features
+
+* **ERC-1155 Tokens** – HPOLY tokens and NFT rewards.
+* **Fair Randomization** – On-chain PRNG with fallback logic.
+* **Token Burn Mechanics** – Create scarcity and reward commitment.
+* **Owner Controls** – Manage token caps, game state, and minting.
+* **Hedera Smart Contract** – Fast, low-cost, and secure.
+
+
+## 🧱 Architecture & Tech Stack
+
+| Layer                 | Technology                   |
+| --------------------- | ---------------------------- |
+| **Smart Contract**    | Solidity (ERC-1155 standard) |
+| **Blockchain**        | Hedera Hashgraph (Testnet)   |
+| **Integration**       | Hedera SDK, HashConnect      |
+| **Frontend**          | React + Vite *(if used)*     |
+| **Wallets Supported** | Metamask, OKX                |
+| **Storage**           | IPFS (for NFT metadata)      |
+| **Randomness**        | Custom PRNG logic            |
+
+
+## 🚀 Getting Started
+
+### 1️⃣ Prerequisites
+
+* Get Hedera testnet tokens via the [Faucet](https://portal.hedera.com/faucet)
+* Install a compatible wallet:
+
+  * [OKX Wallet](https://chromewebstore.google.com/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge)
+  * [Metamask Wallet](https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
+* Add the [Hedera Test Network](https://chainlist.org/?search=hedera&testnets=true) via Chainlist.
+
+### 2️⃣ Deploy & Play
+
+1. Deploy the contract.
+2. Mint 100 HPOLY tokens with `mintTokens()`.
 3. Start the game with `startGame()`.
-4. Roll the die with `rollDice()` and mint NFTs with `mintNFT()`.
+4. Roll dice with `rollDice()`.
+5. Burn 1000+ HPOLY to mint an NFT using `mintNFT()`.
 
-## Requirements
 
-- Solidity ^0.8.20
-- OpenZeppelin Contracts (ERC1155, Ownable)
-- PRNG contract at `0x000...0169`
+## 🧾 Contract Details
 
-## VIDEO PREVIEW
-Video: https://drive.google.com/file/d/1CrXa7PgqNqGkRBvn2VT4G5UN_sx3kBMz/view?usp=sharing
+* **Contract ID:** `0.0.6836339`
+* **Contract Address:** `0x8F1e1DC747D66EA0958e271d7EFe1503a77c719E`
+
+
+
+## 🎮 Game Preview
+
+<img width="1920" height="969" alt="Screenshot 1" src="https://github.com/user-attachments/assets/1c2b7d87-9c6a-4232-9248-ce01ad93ed2f" />  
+
+<img width="1920" height="969" alt="Screenshot 2" src="https://github.com/user-attachments/assets/3f1203d8-bb53-4a96-8d20-a691b1cefce4" />  
+
+
+## 🧠 Gameplay Flow
+
+```mermaid
+flowchart LR
+A[Mint Tokens] --> B[Roll Dice]
+B --> C[Land on Tile]
+C -->|Profit| D[Increase Balance]
+C -->|Loss| E[Decrease Balance]
+C -->|Neutral| F[No Change]
+D --> G[Burn Tokens to Mint NFT]
+E --> H[Check if Balance = 0]
+G --> I[Collect NFT Rewards]
+H --> J[Game Over]
+```
+
+## 🧑‍💻 Team
+
+| Name                | Role                     | Focus                         |
+| ------------------- | ------------------------ | ----------------------------- |
+| **{Emmanuel  Ekpe]** | Smart Contract Developer | Tokenomics, Game Logic        |
+| **[John Olorunmola]** | Frontend Engineer        | UI/UX & Gameplay Interface    |
+| **[Godstime Mgboawaji]** | Integrations Lead        | Hedera SDK, Wallet Connection |
+| **[Emmanuel  & John]** | QA / Documentation       | Testing & Deployment          |
+
+
+## 🌍 Vision & Future Plans
+
+* 🔗 Integrate **Chainlink VRF** for verifiable randomness
+* 🏪 Add an **NFT Marketplace** for HPOLY collectibles
+* 🎮 Expand to **multiplayer gameplay**
+* 🌐 Deploy to **Hedera mainnet**
+* 💰 Introduce **staking & rewards** for HPOLY holders
+
+
+## 🧠 Key Takeaway
+
+> “HederaPoly isn’t just a game — it’s an experiment in transparent token economies, powered by the speed and fairness of Hedera.”
+
+
+## 🪙 Badges
+
+![Built with Solidity](https://img.shields.io/badge/Built%20with-Solidity-blue)
+![Deployed on Hedera](https://img.shields.io/badge/Network-Hedera-green)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
+![Category: Gaming](https://img.shields.io/badge/Category-Gaming-purple)
+
+
+## 🤝 Contact
+
+* **Team Email:** [hackathon@hashgraph-association.com](mailto:hackathon@hashgraph-association.com)
+* **Demo Link:** [https://www.instagram.com/p/DO0OqGwjLwU/?igsh=MWQyMXkxdWNiN29tZA==]
+
+
