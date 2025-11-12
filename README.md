@@ -137,6 +137,8 @@ H --> J[Game Over]
 
 ## 🪙 Badges
 
+https://certs.hashgraphdev.com/cb510dc2-4773-4ac2-b710-3cf16ee92c39.pdf
+
 ![Built with Solidity](https://img.shields.io/badge/Built%20with-Solidity-blue)
 ![Deployed on Hedera](https://img.shields.io/badge/Network-Hedera-green)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
